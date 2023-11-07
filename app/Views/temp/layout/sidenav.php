@@ -2,7 +2,7 @@
     <div class="sidenav-menu">
 
         <?php
-        if (in_groups('admin')) echo view("/temp/layout/sidenav/admin");
+        if (in_groups('operator')) echo view("/temp/layout/sidenav/admin");
         if (in_groups('kepala-sekolah'))  echo view("/temp/layout/sidenav/kepalasekolah");
         ?>
     </div>

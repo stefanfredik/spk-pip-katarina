@@ -1,6 +1,6 @@
-<div class="tab-pane fade" id="mooraTopsis" role="tabpanel" aria-labelledby="mooraTopsis-tab" tabindex="0">
+<div class="tab-pane fade" id="entrophyTopsis" role="tabpanel" aria-labelledby="entrophyTopsis-tab" tabindex="0">
     <div class="bg-primary p-3 text-white rounded">
-        <h3 class="my-5 text-white">Perhitungan Moora</h3>
+        <h3 class="my-5 text-white">Perhitungan entrophy</h3>
         <div class="row">
             <div class="col">
                 <div class="card border border-secondary">
@@ -22,7 +22,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($mooraPeserta as $ps) :
+                                    foreach ($entrophyPeserta as $ps) :
                                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
@@ -65,7 +65,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($mooraPeserta as $ps) :
+                                    foreach ($entrophyPeserta as $ps) :
                                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
@@ -111,7 +111,7 @@
                                     <tr>
                                         <td>A Plus</td>
                                         <?php
-                                        foreach ($mooraTopsisAplus as $key => $plus) : ?>
+                                        foreach ($entrophyTopsisAplus as $key => $plus) : ?>
                                             <td><?= $plus; ?></td>
                                         <?php endforeach; ?>
                                     </tr>
@@ -119,7 +119,7 @@
                                     <tr>
                                         <td>A Minus</td>
                                         <?php
-                                        foreach ($mooraTopsisAminus as $key => $minus) : ?>
+                                        foreach ($entrophyTopsisAminus as $key => $minus) : ?>
                                             <td><?= $minus; ?></td>
                                         <?php endforeach; ?>
                                     </tr>
@@ -156,7 +156,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($mooraTopsisPeserta as $ps) :
+                                    foreach ($entrophyTopsisPeserta as $ps) :
                                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
@@ -195,7 +195,7 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($mooraTopsisPeserta as $ps) :
+                                    foreach ($entrophyTopsisPeserta as $ps) :
                                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>

@@ -12,18 +12,16 @@ use App\Libraries\Moora;
 use App\Libraries\MooraTopsisLib;
 use App\Libraries\TopsisLib;
 
-class Perhitungan extends BaseController
-{
+class Perhitungan extends BaseController {
     var $meta = [
         'url' => 'perhitungan',
         'title' => 'Data Pehitungan',
-        'subtitle' => 'Halaman Pehitungan Moora dan Topsis'
+        'subtitle' => 'Halaman Pehitungan Entrophy dan Topsis'
     ];
 
     private $totalNilaiKriteria;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->kriteriaModel = new KriteriaModel();
         $this->siswaModel = new SiswaModel();
         $this->subkriteriaModel = new SubkriteriaModel();
@@ -31,8 +29,7 @@ class Perhitungan extends BaseController
         $this->kelayakanModel = new KelayakanModel();
     }
 
-    public function index()
-    {
+    public function index() {
         $kriteria       = $this->kriteriaModel->findAll();
         $subkriteria    = $this->subkriteriaModel->findAll();
         $peserta        = $this->pesertaModel->findAllPeserta();
@@ -57,7 +54,7 @@ class Perhitungan extends BaseController
             'title' => 'Data Perhitungan dan Table Moora',
             'dataKriteria' => $this->kriteriaModel->findAll(),
             'totalNilaiKriteria' => $this->totalNilaiKriteria,
-            'mooraPeserta' => $moora->getAllPeserta(),
+            'entrophyPeserta' => $moora->getAllPeserta(),
             'topsisPeserta' => $topsis->getAllPeserta(),
             'jumKriteriaBenefit' => $moora->jumKriteriaBenefit,
             'jumKriteriaCost' => $moora->jumKriteriaCost,
@@ -67,9 +64,9 @@ class Perhitungan extends BaseController
             'topsisAminus' => $topsis->aMinus,
             "meta"  => $this->meta,
             // moora and topsis
-            "mooraTopsisPeserta" => $mooraTopsis->getAllPeserta(),
-            'mooraTopsisAplus' => $mooraTopsis->aPlus,
-            'mooraTopsisAminus' => $mooraTopsis->aMinus,
+            "entrophyTopsisPeserta" => $mooraTopsis->getAllPeserta(),
+            'entrophyTopsisAplus' => $mooraTopsis->aPlus,
+            'entrophyTopsisAminus' => $mooraTopsis->aMinus,
         ];
 
         return view('/perhitungan/index', $data);

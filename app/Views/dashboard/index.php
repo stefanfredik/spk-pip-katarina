@@ -10,7 +10,7 @@
 </div>
 
 <?php
-if (in_groups('admin')) echo view("/dashboard/dashboard/admin");
+if (in_groups('operator')) echo view("/dashboard/dashboard/admin");
 if (in_groups('kepala-sekolah')) echo view("/dashboard/dashboard/kepalasekolah");
 ?>
 

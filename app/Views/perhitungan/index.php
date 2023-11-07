@@ -12,21 +12,21 @@
             </li>
 
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="moora-tab" data-bs-toggle="tab" data-bs-target="#moora" type="button" role="tab" aria-controls="moora-tab-pane" aria-selected="true">Moora</button>
+                <button class="nav-link" id="entrophy-tab" data-bs-toggle="tab" data-bs-target="#entrophy" type="button" role="tab" aria-controls="entrophy-tab-pane" aria-selected="true">entrophy</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="topsis-tab" data-bs-toggle="tab" data-bs-target="#topsis" type="button" role="tab" aria-controls="topsis-tab-pane" aria-selected="false">Topsis</button>
             </li>
 
             <!-- <li class="nav-item" role="presentation">
-                <button class="nav-link" id="mooraTopsis-tab" data-bs-toggle="tab" data-bs-target="#mooraTopsis" type="button" role="tab" aria-controls="mooraTopsis-tab-pane" aria-selected="false">Moora & Topsis</button>
+                <button class="nav-link" id="entrophyTopsis-tab" data-bs-toggle="tab" data-bs-target="#entrophyTopsis" type="button" role="tab" aria-controls="entrophyTopsis-tab-pane" aria-selected="false">entrophy & Topsis</button>
             </li> -->
         </ul>
 
         <div class="tab-content" id="myTabContent">
             <?= $this->include("perhitungan/kriteria"); ?>
             <?= $this->include("perhitungan/peserta"); ?>
-            <?= $this->include("perhitungan/moora"); ?>
+            <?= $this->include("perhitungan/entrophy"); ?>
             <?= $this->include("perhitungan/topsis"); ?>
 
         </div>

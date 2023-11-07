@@ -94,8 +94,8 @@ define('EVENT_PRIORITY_NORMAL', 100);
 define('EVENT_PRIORITY_HIGH', 10);
 
 // $config  = config("Config");
-const APP_NAME  = "SPK BSM";
-const APP_DESC   = "SELEKSI PENERIMAAN BANTUAN SISWA MISKIN (BSM) PADA SD NEGERI LANCANG";
+const APP_NAME  = "SPK PIP";
+const APP_DESC   = "SYSTEM SELEKSI PENERIMA PIP SMAN 1 BOLENG ";
 const APP_VER   = "1.0.0";
 const LOGO_IMG = "assets/img/favicon.png";
-const APP_SLUG = "SPK BSM";
+const APP_SLUG = "SPK PIP";
