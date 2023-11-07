@@ -54,7 +54,7 @@
 
     <footer class="footer text-center justify-content-center">
         <div class="container">
-            <h4 class="text-uppercase mb-4">SD Negeri Lancang</h4>
+            <h4 class="text-uppercase mb-4">SMAN 1 BOLENG</h4>
         </div>
     </footer>
 
