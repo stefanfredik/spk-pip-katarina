@@ -16,7 +16,7 @@
                     <i class="bi bi-person-fill dropdown-user-img fa-2x rounded-circle border text-center align-center"></i>
                     <!-- <img class="dropdown-user-img" src="/sbadmin/assets/img/illustrations/profiles/profile-1.png" /> -->
                     <div class="dropdown-user-details">
-                        <div class="dropdown-user-details-name"><?= @user()->nama_user ?></div>
+                        <div class="dropdown-user-details-name"><?= @(user()->nama_user) ?></div>
                         <div class="dropdown-user-details-email">username</div>
                     </div>
                 </h6>
