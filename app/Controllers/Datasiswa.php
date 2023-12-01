@@ -153,13 +153,13 @@ class Datasiswa extends BaseController {
 
         foreach ($dataExcel as $t) {
             $dt["nisn"] = $t[0];
-            $dt["nama_lengkap"] = $t[2];
-            $dt["tempat_lahir"] = $t[3];
-            $dt["tanggal_lahir"] = date('Y-m-d', strtotime(str_replace('/', '-', $t[4])));
-            $dt["jenis_kelamin"] = ($t[5] == "P" ? "Perempuan" : "Laki-laki");
-            $dt["kelas"] = $t[6];
-            $dt["nama_orangtua"] = $t[7];
-            $dt["alamat"] = $t[8];
+            $dt["nama_lengkap"] = $t[1];
+            $dt["tempat_lahir"] = $t[2];
+            $dt["tanggal_lahir"] = date('Y-m-d', strtotime(str_replace('/', '-', $t[3])));
+            $dt["jenis_kelamin"] = ($t[4] == "P" ? "Perempuan" : "Laki-laki");
+            $dt["kelas"] = $t[5];
+            $dt["nama_orangtua"] = $t[6];
+            $dt["alamat"] = $t[7];
 
             array_push($data, $dt);
         }
