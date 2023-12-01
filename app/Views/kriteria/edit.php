@@ -37,23 +37,6 @@
                             <div id="" class="invalid-feedback"></div>
                         </div>
                     </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Cost/ Benefit</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input value="cost" <?= ($kriteria['type'] == 'cost') ? 'checked' : ''; ?> class="form-check-input" type="radio" name="type" id="cost">
-                            <label class="form-check-label" for="cost">
-                                Cost
-                            </label>
-                            <input value="benefit" <?= ($kriteria['type'] == 'benefit') ? 'checked' : ''; ?> class="form-check-input" type="radio" name="type" id="benefit">
-                            <label class="form-check-label" for="benefit">
-                                Benefit
-                            </label>
-                            <div id="" class="invalid-feedback"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

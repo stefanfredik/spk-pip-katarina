@@ -20,26 +20,29 @@
         Data User
     </a>
 
+    <hr class="hr">
+    <div class="sidenav-menu-heading">PIP</div>
+
 
     <a class="nav-link <?= url_is('/datasiswa') ? 'active' : '' ?>" href="/datasiswa">
         <div class="nav-link-icon"><i data-feather="layers"></i></div>
         Data Siswa
     </a>
-    <hr class="hr">
 
-    <a class="nav-link <?= url_is('/kriteria') ? 'active' : '' ?>" href="/kriteria">
+
+    <!-- <a class="nav-link <?= url_is('/kriteria') ? 'active' : '' ?>" href="/kriteria">
         <div class="nav-link-icon"><i data-feather="layers"></i></div>
         Data Kriteria
-    </a>
+    </a> -->
 
-    <a class="nav-link <?= url_is('/subkriteria') ? 'active' : '' ?>" href="/subkriteria">
+    <!-- <a class="nav-link <?= url_is('/subkriteria') ? 'active' : '' ?>" href="/subkriteria">
         <div class="nav-link-icon"><i data-feather="list"></i></div>
         Data Sub Kriteria
-    </a>
+    </a> -->
 
     <a class="nav-link <?= url_is('/datapeserta') ? 'active' : '' ?>" href="/datapeserta">
         <div class="nav-link-icon"><i data-feather="file-text"></i></div>
-        Data Peserta
+        Data Kriteria
     </a>
 
     <div class="sidenav-menu-heading">Pengelolahan</div>

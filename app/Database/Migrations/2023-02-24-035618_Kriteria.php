@@ -25,10 +25,6 @@ class Kriteria extends Migration {
             'nilai' => [
                 'type'  => 'FLOAT',
             ],
-            'type' => [
-                'type'       => 'ENUM',
-                'constraint' => ['cost', 'benefit']
-            ],
         ];
 
         $this->forge->addField($data);

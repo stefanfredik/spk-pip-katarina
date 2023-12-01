@@ -3,7 +3,7 @@
 <?= $this->section("content"); ?>
 <div class="row">
     <div class="col">
-        <?php if (in_groups("admin")) :  ?>
+        <?php if (in_groups("operator")) :  ?>
             <button data-url="<?= '/' . $meta['url'] . '/tambah'; ?>" class="my-2 btn btn-cyan" onclick="add(this)"><i class="bi bi-plus-circle mx-1"></i>Tambah Data</button>
         <?php endif;  ?>
         <div class="card border border-secondary">
