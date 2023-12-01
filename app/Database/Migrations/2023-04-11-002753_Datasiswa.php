@@ -33,7 +33,6 @@ class Datasiswa extends Migration {
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
-
             'kelas' => [
                 'type' => 'VARCHAR',
                 'constraint' => 64,
@@ -46,7 +45,8 @@ class Datasiswa extends Migration {
             ],
             'alamat' => [
                 'type' => 'VARCHAR',
-                'constraint' => 128
+                'constraint' => 128,
+                'null' => true,
             ],
         ];
 
