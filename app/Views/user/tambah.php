@@ -22,9 +22,9 @@
                         </div>
                         <div class="col-md-8">
                             <select class="form-control" name="jabatan" id="" required>
-                                <option value="">Pilih Jabatan</option>
-                                <option value="admin">Admin</option>
-                                <option value="kepala-sekolah">Kepala Sekolah</option>
+                                <?php foreach ($jabatan as $jb) : ?>
+                                    <option value="<?= $jb['name']; ?>"><?= $jb['description']; ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>

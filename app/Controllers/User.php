@@ -36,7 +36,8 @@ class User extends BaseController {
     public function tambah() {
         $data = [
             'title' => 'Tambah Data User',
-            'url'   => $this->meta['url']
+            'url'   => $this->meta['url'],
+            'jabatan' =>  $this->userModel->findAllRole()
         ];
 
         return view('/user/tambah', $data);
