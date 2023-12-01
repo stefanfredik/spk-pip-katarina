@@ -27,16 +27,6 @@
 
                 <div class="row mb-1">
                     <div class="col-md-4">
-                        <label class="form-label">NIK</label>
-                    </div>
-
-                    <div class="col-md-8">
-                        <p><?= $siswa['nik'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
                         <label class="form-label">Kelas</label>
                     </div>
 
@@ -74,15 +64,6 @@
                     </div>
                 </div>
 
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">Agama</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['agama'] ?></p>
-                    </div>
-                </div>
-
                 <hr>
                 <div class="row mb-1">
                     <div class="col-md-4">
@@ -95,55 +76,10 @@
 
                 <div class="row mb-1">
                     <div class="col-md-4">
-                        <label class="form-label">ALamat</label>
+                        <label class="form-label">Alamat</label>
                     </div>
                     <div class="col-md-8">
                         <p><?= $siswa['alamat'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">RT</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['rt'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">RW</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['rw'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">Kelurahan</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['kelurahan'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">Kecamatan</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['kecamatan'] ?></p>
-                    </div>
-                </div>
-
-                <div class="row mb-1">
-                    <div class="col-md-4">
-                        <label class="form-label">Kode POS</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p><?= $siswa['kode_pos'] ?></p>
                     </div>
                 </div>
             </div>

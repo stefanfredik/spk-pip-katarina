@@ -15,14 +15,6 @@
                             <input name="nisn" type="text" class="form-control" required>
                         </div>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">NIK</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="nik" type="text" class="form-control" required>
-                        </div>
-                    </div>
 
                     <div class="row mb-2">
                         <div class="col-md-4">
@@ -66,14 +58,6 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Agama</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="agama" type="text" class="form-control" required>
-                        </div>
-                    </div>
 
                     <div class="row mb-2">
                         <div class="col-md-4">
@@ -101,43 +85,6 @@
                         </div>
                         <div class="col-md-8">
                             <input name="alamat" type="text" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">RT</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="rt" type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">RW</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="rw" type="text" class="form-control">
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Dusun</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="dusun" type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Kode Pos</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input name="kode_pos" type="text" class="form-control" required>
                         </div>
                     </div>
 
