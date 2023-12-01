@@ -10,7 +10,7 @@
     <div class="sidenav-footer">
         <div class="sidenav-footer-content">
             <div class="sidenav-footer-subtitle">User Login :</div>
-            <div class="sidenav-footer-title"><?= user()->nama_user ?></div>
+            <div class="sidenav-footer-title"><?= user()->nama_user ?? "" ?></div>
         </div>
     </div>
 
