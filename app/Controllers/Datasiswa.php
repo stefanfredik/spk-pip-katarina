@@ -6,8 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Datasiswa extends BaseController
-{
+class Datasiswa extends BaseController {
     use ResponseTrait;
 
     var $meta = [
@@ -17,13 +16,11 @@ class Datasiswa extends BaseController
     ];
 
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->siswaModel = new SiswaModel();
     }
 
-    public function index()
-    {
+    public function index() {
 
         $data = [
             'title' => 'Data Siswa',
@@ -34,8 +31,7 @@ class Datasiswa extends BaseController
         return view('/siswa/index', $data);
     }
 
-    public function tambah()
-    {
+    public function tambah() {
         $data = [
             'title' => 'Tambah Data Siswa',
             'meta'   => $this->meta
@@ -44,8 +40,7 @@ class Datasiswa extends BaseController
         return view('/siswa/tambah', $data);
     }
 
-    public function table()
-    {
+    public function table() {
         $data = [
             'title' => 'Data Siswa',
             'meta'   => $this->meta,
@@ -57,8 +52,7 @@ class Datasiswa extends BaseController
 
 
 
-    public function edit($id)
-    {
+    public function edit($id) {
         $data = [
             'title' => 'Edit Data Siswa',
             'siswa'  => $this->siswaModel->find($id),
@@ -70,8 +64,7 @@ class Datasiswa extends BaseController
 
 
 
-    public function detail($id)
-    {
+    public function detail($id) {
         $data = [
             'title' => 'Detail Data Penduduk',
             'siswa'  => $this->siswaModel->find($id),
@@ -81,8 +74,7 @@ class Datasiswa extends BaseController
         return $this->respond(view('/siswa/detail', $data), 200);
     }
 
-    public function store()
-    {
+    public function store() {
         $data = $this->request->getPost();
         $this->siswaModel->save($data);
 
@@ -95,8 +87,7 @@ class Datasiswa extends BaseController
         return $this->respond($res, 200);
     }
 
-    public function update($id)
-    {
+    public function update($id) {
         $data = $this->request->getPost();
         $this->siswaModel->update($id, $data);
 
@@ -109,8 +100,7 @@ class Datasiswa extends BaseController
         return $this->respond($res, 200);
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $this->siswaModel->delete($id);
 
         $res = [
@@ -121,8 +111,7 @@ class Datasiswa extends BaseController
         return $this->respond($res, 200);
     }
 
-    public function upload()
-    {
+    public function upload() {
         $data = [
             'title' => 'Upload Data Siswa dari File Excel',
             'meta'   => $this->meta
@@ -131,8 +120,7 @@ class Datasiswa extends BaseController
         return view('/siswa/upload', $data);
     }
 
-    public function doupload()
-    {
+    public function doupload() {
 
         $rules = [
             'excel_file' => [
@@ -165,21 +153,13 @@ class Datasiswa extends BaseController
 
         foreach ($dataExcel as $t) {
             $dt["nisn"] = $t[0];
-            $dt["nik"] = $t[1];
             $dt["nama_lengkap"] = $t[2];
             $dt["tempat_lahir"] = $t[3];
             $dt["tanggal_lahir"] = date('Y-m-d', strtotime(str_replace('/', '-', $t[4])));
             $dt["jenis_kelamin"] = ($t[5] == "P" ? "Perempuan" : "Laki-laki");
-            $dt["agama"] = $t[6];
-            $dt["kelas"] = $t[7];
-            $dt["nama_orangtua"] = $t[8];
-            $dt["alamat"] = $t[9];
-            $dt["rt"] = $t[10];
-            $dt["rw"] = $t[11];
-            $dt["dusun"] = $t[12];
-            $dt["kelurahan"] = $t[13];
-            $dt["kecamatan"] = $t[14];
-            $dt["kode_pos"] = $t[15];
+            $dt["kelas"] = $t[6];
+            $dt["nama_orangtua"] = $t[7];
+            $dt["alamat"] = $t[8];
 
             array_push($data, $dt);
         }

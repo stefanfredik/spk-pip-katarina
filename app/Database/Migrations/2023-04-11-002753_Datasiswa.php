@@ -4,10 +4,8 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Datasiswa extends Migration
-{
-    public function up()
-    {
+class Datasiswa extends Migration {
+    public function up() {
         $data = [
             'id' => [
                 'type'  => 'INT',
@@ -19,10 +17,6 @@ class Datasiswa extends Migration
             'nisn' => [
                 'type' => 'VARCHAR',
                 'constraint' => 32
-            ],
-            'nik' => [
-                'type' => 'VARCHAR',
-                'constraint' => 32,
             ],
             'nama_lengkap' => [
                 'type' => 'VARCHAR',
@@ -39,11 +33,6 @@ class Datasiswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 64
             ],
-            'agama' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                "null"  => true
-            ],
 
             'kelas' => [
                 'type' => 'VARCHAR',
@@ -59,36 +48,6 @@ class Datasiswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 128
             ],
-            'rt' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                'null' => true
-            ],
-            'rw' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64.,
-                'null' => true
-            ],
-            'dusun' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                'null' => true
-            ],
-            'kelurahan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                'null' => true
-            ],
-            'kecamatan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                'null' => true
-            ],
-            'kode_pos' => [
-                'type' => 'VARCHAR',
-                'constraint' => 64,
-                'null' => true
-            ]
         ];
 
         $this->forge->addField($data);
@@ -96,8 +55,7 @@ class Datasiswa extends Migration
         $this->forge->createTable('siswa');
     }
 
-    public function down()
-    {
+    public function down() {
         $this->forge->dropTable('siswa');
     }
 }

@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class SiswaModel extends Model
-{
+class SiswaModel extends Model {
     protected $DBGroup          = 'default';
     protected $table            = 'siswa';
     protected $primaryKey       = 'id';
@@ -14,27 +13,24 @@ class SiswaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'id_user', 'nisn', 'nik', 'nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'kelas', 'nama_orangtua', 'alamat', 'rt', 'rw', 'dusun', 'kelurahan', 'kecamatan', 'kode_pos',];
+    protected $allowedFields    = ['id', 'id_user', 'nisn', 'nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'kelas', 'nama_orangtua', 'alamat'];
 
 
-    public function findAllData()
-    {
+    public function findAllData() {
         $this->select('siswa.*');
         $this->select('kriteriasiswa.*', 'kriteriasiswa.id as Kri');
         $this->join('kriteriasiswa', 'siswa.id = kriteriasiswa.id_siswa', 'left', 'siswa.id as pend');
         return $this->findAll();
     }
 
-    public function findAllNonPeserta()
-    {
+    public function findAllNonPeserta() {
         $this->select("siswa.*");
         $this->join("peserta", "peserta.id_siswa = siswa.id", "left")->where("peserta.id", NULL);
         return $this->findAll();
     }
 
 
-    public function findAllsiswa()
-    {
+    public function findAllsiswa() {
         $this->select("siswa.*");
         $this->select("peserta.id_siswa as peserta");
         $this->join("peserta", "peserta.id_siswa = siswa.id", "left");
