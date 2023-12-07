@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\EntropyTopsis;
 use App\Models\KelayakanModel;
 use App\Models\KriteriaModel;
 use App\Models\PesertaModel;
@@ -39,13 +40,17 @@ class Perhitungan extends BaseController {
         $check = checkdata($peserta, $kriteria, $subkriteria);
         if ($check) return view('/error/index', ['title' => 'Error', 'listError' => $check]);
 
-        // $moora = new Moora($peserta, $kriteria, $subkriteria, $kelayakan);
-        $moora = new Moora($peserta, $kriteria, $subkriteria);
-        $topsis = new TopsisLib($peserta, $kriteria, $subkriteria);
-        $mooraTopsis = new MooraTopsisLib($peserta, $kriteria, $subkriteria);
+        $entropyTopsis = new EntropyTopsis($peserta, $kriteria, $subkriteria);
 
-        $topsis->sortPeserta();
-        $moora->sortPeserta();
+        // dd($entropyTopsis);
+
+        // $moora = new Moora($peserta, $kriteria, $subkriteria, $kelayakan);
+        // $moora = new Moora($peserta, $kriteria, $subkriteria);
+        // $topsis = new TopsisLib($peserta, $kriteria, $subkriteria);
+        // $mooraTopsis = new MooraTopsisLib($peserta, $kriteria, $subkriteria);
+
+        // $topsis->sortPeserta();
+        // $moora->sortPeserta();
 
         // dd($data);
         // dd($topsis);
@@ -54,19 +59,17 @@ class Perhitungan extends BaseController {
             'title' => 'Data Perhitungan dan Table Moora',
             'dataKriteria' => $this->kriteriaModel->findAll(),
             'totalNilaiKriteria' => $this->totalNilaiKriteria,
-            'entrophyPeserta' => $moora->getAllPeserta(),
-            'topsisPeserta' => $topsis->getAllPeserta(),
-            'jumKriteriaBenefit' => $moora->jumKriteriaBenefit,
-            'jumKriteriaCost' => $moora->jumKriteriaCost,
+            'entropyTopsis' => $entropyTopsis->getAllPeserta(),
             'dataSubkriteria' => $this->subkriteriaModel->findAll(),
-            'bobotKriteria' => $moora->bobotKriteria,
-            'topsisAplus' => $topsis->aPlus,
-            'topsisAminus' => $topsis->aMinus,
+            'jumlahNormalisasiMatrixAwal' => $entropyTopsis->dataJumlahNormalisasiMatrixAwal,
+            'jumlahKriteriaEntropy' => $entropyTopsis->jumlahKriteriaEntropy,
+            "dataEntropyKriteria" => $entropyTopsis->dataEntropyKriteria,
+            'nilaiK'    => $entropyTopsis->nilaiK,
+            'dataBobotEntropy'    => $entropyTopsis->dataBobotEntropy,
+            "dataBobotEntropyBaru" => $entropyTopsis->dataBobotEntropyBaru,
+            "totalBobotEntropyBaru" => $entropyTopsis->totalBobotEntropyBaru,
+            "dataBobotEntropyAkhir" => $entropyTopsis->dataBobotEntropyAKhir,
             "meta"  => $this->meta,
-            // moora and topsis
-            "entrophyTopsisPeserta" => $mooraTopsis->getAllPeserta(),
-            'entrophyTopsisAplus' => $mooraTopsis->aPlus,
-            'entrophyTopsisAminus' => $mooraTopsis->aMinus,
         ];
 
         return view('/perhitungan/index', $data);

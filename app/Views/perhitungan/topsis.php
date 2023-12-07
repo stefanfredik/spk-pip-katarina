@@ -27,7 +27,7 @@
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= $ps['nama_lengkap']; ?></td>
-                                            <?php foreach ($ps['normalisasi'] as $key => $dn) : ?>
+                                            <?php foreach ($ps['kriteia_nilai'] as $key => $dn) : ?>
                                                 <td><?= $dn ?></td>
                                             <?php endforeach; ?>
                                         </tr>

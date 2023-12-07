@@ -27,7 +27,7 @@
 
                     <div class="row mb-2">
                         <div class="col-md-4">
-                            <label class="form-label">Penduduk</label>
+                            <label class="form-label">Nama Siswa</label>
                         </div>
 
 
@@ -49,7 +49,7 @@
 
                             <div class="col-md-8">
                                 <select class="form-control" name="<?= 'k_' . $dt['id'] ?>" id="" required>
-                                    <option value="">Pilih Subkriteria</option>
+                                    <option value="">Silahkan Pilih</option>
                                     <?php foreach ($dataSubkriteria as $sk) :
                                         if ($dt['id'] == $sk['id_kriteria']) :
                                     ?>

@@ -9,7 +9,6 @@
                 <th>Tanggal Lahir</th>
                 <th>Jenis Kelamin</th>
                 <th>Kelas</th>
-
                 <th>Opsi</th>
             </tr>
         </thead>

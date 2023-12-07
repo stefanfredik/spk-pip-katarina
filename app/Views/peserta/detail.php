@@ -62,15 +62,6 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Agama</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['agama']; ?></p>
-                        </div>
-                    </div>
-
 
                     <div class="row mb-2">
                         <div class="col-md-4">
@@ -105,62 +96,15 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">RT</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['rt']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">RW</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['rw']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Dusun</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['dusun']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Kecamatan</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['kecamatan']; ?></p>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <label class="form-label">Kode POS</label>
-                        </div>
-                        <div class="col-md-8">
-                            <p><?= $peserta['kode_pos']; ?></p>
-                        </div>
-                    </div>
-
                 </div>
                 <hr>
                 <h5>Data Kriteria</h5>
                 <div class="border rounded p-3">
-
                     <?php foreach ($dataKriteria as $dt) : ?>
                         <div class="row mb-2">
                             <div class="col-md-4">
                                 <label class="form-label"><?= $dt['keterangan'] . ' - ' . $dt['kriteria']; ?></label>
                             </div>
-
                             <div class="col-md-8">
                                 <?php
                                 $k = 'k_' . $dt['id'];
