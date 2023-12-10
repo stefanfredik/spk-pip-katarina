@@ -18,25 +18,6 @@
 
 <?= $this->section("script"); ?>
 <script>
-    const config = {
-        columnDefs: [{
-            width: 20,
-            targets: 0
-        }],
-        language: {
-            paginate: {
-                first: "Awal",
-                last: "Akhir",
-                next: ' <i class="bi bi-arrow-right-circle"></i>',
-                previous: '<i class="bi bi-arrow-left-circle"></i>'
-            },
-            zeroRecords: "Belum ada data.",
-            search: "Cari:",
-            lengthMenu: "Tampil _MENU_ kolom",
-            info: "Kolom _START_ sampai _END_ dari _TOTAL_ kolom"
-        }
-    };
-
-    $('#table').DataTable(config)
+    $('#table').DataTable(configDataTable)
 </script>
 <?= $this->endSection(); ?>

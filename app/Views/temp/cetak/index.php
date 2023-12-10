@@ -62,7 +62,7 @@
             <div style="display: inline-block; text-align: center; margin: 0 80px;">
                 <p style="margin: 0; font-weight: bold;">PEMERINTAH PROVINSI NUSA TENGGARA TIMUR</p>
                 <p style="margin: 0; font-weight: bold;">KABUPATEN MANGGARAI BARAT</p>
-                <p style="margin: 0; font-weight: bold;">SD Negeri Lancang</p>
+                <p style="margin: 0; font-weight: bold;">SMAN 1 BOLENG </p>
                 <!-- <p style="margin: 0; font-size: small;">Jalan Lintas Selatan Desa Nggorang</p> -->
             </div>
 
@@ -74,8 +74,8 @@
         <hr>
 
         <div>
-            <p style="text-align: right;"><?php echo "Lancang, " . date('d-m-Y'); ?></p>
-            <h3 class="head"><?= "DAFTAR SISWA PENERIMA BANTUAN BEASISWA MISKIN (BSM)"; ?></h3>
+            <p style="text-align: right;"><?php echo "Boleng, " . date('d-m-Y'); ?></p>
+            <h3 class="head"><?= "DAFTAR SISWA PENERIMA PIP SMAN 1 BOLENG "; ?></h3>
         </div>
 
 
@@ -86,9 +86,9 @@
             </div>
 
             <div>
-                <p style="font-weight: bold; margin: 0;">( Antonius Supriadi, S.Pd,Gr )</p>
+                <p style="font-weight: bold; margin: 0;">( ------------------------- )</p>
                 <!-- <p style="margin: 0;">Pembi</p> -->
-                <p style="margin: 0;">NIP. 19860527200904 1 001</p>
+                <p style="margin: 0;">NIP. _______________</p>
             </div>
         </div>
     </div>

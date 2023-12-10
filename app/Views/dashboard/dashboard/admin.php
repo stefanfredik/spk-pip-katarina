@@ -7,7 +7,7 @@
                     <div class="me-1">
                         <i class="text-white bi bi-list-ul text-primary fa-2x"></i>
                         <h5 class="text-white">Data User</h5>
-                        <div class="text-white small"><?= $dataUserCount?>  Data</div>
+                        <div class="text-white small"><?= $dataUserCount ?> Data</div>
                     </div>
 
                     <i class="text-white  bi bi-people fa-5x"></i>
@@ -53,7 +53,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xl-6 mb-4">
+    <div class="col-xl-12 mb-4">
         <!-- Dashboard example card 1-->
         <a class="card lift bg-pink" href="/kriteria">
             <div class="card-body d-flex justify-content-center flex-column">
@@ -65,23 +65,6 @@
                     </div>
                     <i class="text-white  bi bi-clipboard-fill fa-5x"></i>
                     <!-- <img src="/sbadmin/assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" /> -->
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-6 mb-4">
-        <!-- Dashboard example card 2-->
-        <a class="card lift bg-yellow " href="/subkriteria">
-            <div class="card-body d-flex justify-content-center flex-column">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="me-3">
-                        <i class="text-white bi bi-list-ul text-primary fa-2x"></i>
-                        <h5 class="text-white">Data Sub Kriteria</h5>
-                        <div class="text-white small"><?= $dataSubKriteriaCount ?> Data</div>
-                    </div>
-                    <i class="text-white  bi bi-clipboard-pulse fa-5x"></i>
-                    <!-- <img src="/sbadmin/assets/img/illustrations/processing.svg" alt="..." style="width: 8rem" /> -->
-
                 </div>
             </div>
         </a>

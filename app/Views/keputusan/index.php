@@ -15,14 +15,12 @@
                                     <?php if (in_groups("kepala-sekolah")) : ?>
                                         <th>Action</th>
                                     <?php endif; ?>
-                                    <th>Status</th>
+                                    <th>No</th>
                                     <th class="text-center" width="80">Rangking</th>
                                     <th>NISN</td>
                                     <th>Nama Lengkap</th>
                                     <th>Jenis Kelamin</td>
-                                        <!-- <th>Nilai Akhir</td> -->
-                                    <th>Nilai Topsis</td>
-                                    <th>Nilai Entropy</td>
+                                    <th>Nilai Akhir</td>
                                     <th>Keputusan</th>
                                     <th>Periode</th>
                                     <th>Waktu Terima</th>
@@ -30,20 +28,21 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $rank = 1;
+                                $no = 1;
                                 foreach ($peserta as $ps) :
                                 ?>
                                     <tr>
-                                        <?php if (in_groups("kepala-sekolah")) : ?>
+                                        <!-- <?php if (in_groups("kepala-sekolah")) : ?>
                                             <td><?php if ($ps['validasi'] != 'Valid') : ?><button data-id="<?= $ps["id"]; ?>" onclick="validasi(this)" class="btn btn-sm btn-primary"><i class="bi bi-check-all mx-2"></i>Validasi</button><?php endif; ?></td>
-                                        <?php endif; ?>
-                                        <td><span class="badge <?= $ps['validasi'] == 'Valid' ? 'bg-success' : 'bg-danger'; ?>"><?= $ps['validasi']; ?></span></td>
-                                        <td class="text-center "><span class="badge bg-cyan rounded rounded-circle"><?= $rank++; ?></span></td>
+                                        <?php endif; ?> -->
+
+                                        <!-- <td><span class="badge <?= $ps['validasi'] == 'Valid' ? 'bg-success' : 'bg-danger'; ?>"><?= $ps['validasi']; ?></span></td> -->
+                                        <td><?= $no++ ?></td>
+                                        <td class="text-center "><span class="badge bg-cyan rounded rounded-circle"><?= $ps["rangking"]; ?></span></td>
                                         <td><?= $ps['nisn'] ?></td>
                                         <td><?= $ps['nama_lengkap'] ?></td>
                                         <td><?= $ps['jenis_kelamin'] ?></td>
-                                        <td>-</td>
-                                        <td><?= $ps['nilaiTopsis']; ?></td>
+                                        <td><?= $ps['topsis_nilaiv']; ?></td>
                                         <td><?= $ps['status']; ?></td>
                                         <td><?= $ps['periode']; ?></td>
                                         <td><?= $ps['tanggalTerima']; ?></td>
@@ -97,6 +96,10 @@
             }
         })
     }
+</script>
+
+<script>
+    $('.table').DataTable(configDataTable)
 </script>
 
 <?= $this->endSection(); ?>

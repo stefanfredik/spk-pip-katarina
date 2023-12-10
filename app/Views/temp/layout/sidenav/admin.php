@@ -30,10 +30,10 @@
     </a>
 
 
-    <!-- <a class="nav-link <?= url_is('/kriteria') ? 'active' : '' ?>" href="/kriteria">
+    <a class="nav-link <?= url_is('/kriteria') ? 'active' : '' ?>" href="/kriteria">
         <div class="nav-link-icon"><i data-feather="layers"></i></div>
         Data Kriteria
-    </a> -->
+    </a>
 
     <!-- <a class="nav-link <?= url_is('/subkriteria') ? 'active' : '' ?>" href="/subkriteria">
         <div class="nav-link-icon"><i data-feather="list"></i></div>
@@ -42,7 +42,7 @@
 
     <a class="nav-link <?= url_is('/datapeserta') ? 'active' : '' ?>" href="/datapeserta">
         <div class="nav-link-icon"><i data-feather="file-text"></i></div>
-        Data Kriteria
+        Data Peserta
     </a>
 
     <div class="sidenav-menu-heading">Pengelolahan</div>

@@ -41,6 +41,7 @@ class Perhitungan extends BaseController {
         if ($check) return view('/error/index', ['title' => 'Error', 'listError' => $check]);
 
         $entropyTopsis = new EntropyTopsis($peserta, $kriteria, $subkriteria);
+        // $entropyTopsis->sortPeserta();
 
         // dd($entropyTopsis);
 
@@ -70,6 +71,9 @@ class Perhitungan extends BaseController {
             "totalBobotEntropyBaru" => $entropyTopsis->totalBobotEntropyBaru,
             "dataBobotEntropyAkhir" => $entropyTopsis->dataBobotEntropyAKhir,
             "meta"  => $this->meta,
+            // 
+            "topsisKriteriaMax" => $entropyTopsis->topsisKriteriaMax,
+            "topsisKriteriaMin" =>  $entropyTopsis->topsisKriteriaMin,
         ];
 
         return view('/perhitungan/index', $data);

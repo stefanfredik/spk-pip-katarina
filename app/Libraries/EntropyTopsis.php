@@ -20,6 +20,11 @@ class EntropyTopsis {
     var $totalEntropy;
     var $totalBobotEntropyBaru;
 
+    // Topsis
+    var $topsisKriteriaNormalisasi;
+    var $topsisKriteriaMax;
+    var $topsisKriteriaMin;
+
     public function __construct(
         public array $dataPeserta,
         public array $dataKriteria,
@@ -40,6 +45,15 @@ class EntropyTopsis {
         $this->hitungBobotEntropyBaru();
         $this->hitungTotalBobotEntropyBaru();
         $this->hitungBobotEntropyAkhir();
+
+        // Topsis
+        $this->hitungTopsisNormalisasiKriteria();
+        $this->hitungTopsisNormalisasi();
+        $this->hitungTopsisKriteriaMax();
+        $this->hitungTopsisKriteriaMin();
+        $this->hitungDPlus();
+        $this->hitungDMinus();
+        $this->hitungNilaiV();
     }
 
     private function setDataInfo() {
@@ -201,22 +215,134 @@ class EntropyTopsis {
     // Topsis
 
 
-    public function hitungNormalisasiTopsis() {
-        foreach ($this->dataPeserta as $key => $ps) {
-            foreach ($this->dataKriteria as $dk) {
-                $k = 'k_' . $dk['id'];
+    // public function hitungNormalisasiTopsis() {
+    //     foreach ($this->dataPeserta as $key => $ps) {
+    //         foreach ($this->dataKriteria as $dk) {
+    //             $k = 'k_' . $dk['id'];
 
-                foreach ($this->dataSubkriteria as $ds) {
-                    if ($ps[$k] == $ds["id"]) {
-                        $nilai  = 0;
-                        $nilai  = 
-                        $this->dataAkhir[$key]["normalisasi_topsis"][$dk["keterangan"]] = $ds['nilai'];
-                    } else if ($ps[$k] == null) {
-                        $this->dataAkhir[$key]["kriteria_nilai"][$dk["keterangan"]] = 0;
-                        $this->dataAkhir[$key]["kriteria_keterangan"][$dk["keterangan"]] = 0;
-                    }
-                }
+    //             foreach ($this->dataSubkriteria as $ds) {
+    //                 if ($ps[$k] == $ds["id"]) {
+    //                     $nilai  = 0;
+    //                     $nilai  = 
+    //                     $this->dataAkhir[$key]["normalisasi_topsis"][$dk["keterangan"]] = $ds['nilai'];
+    //                 } else if ($ps[$k] == null) {
+    //                     $this->dataAkhir[$key]["kriteria_nilai"][$dk["keterangan"]] = 0;
+    //                     $this->dataAkhir[$key]["kriteria_keterangan"][$dk["keterangan"]] = 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    public function hitungTopsisNormalisasiKriteria() {
+        foreach ($this->dataKriteria as $dk) {
+            $nilai = 0;
+
+            foreach ($this->dataAkhir as $ps) {
+                $nilai += $ps["kriteria_nilai"][$dk["keterangan"]];
             }
+
+            $normalisasi = sqrt($nilai);
+            $this->topsisKriteriaNormalisasi[$dk["keterangan"]] = $normalisasi;
+        }
+    }
+
+
+    public function hitungTopsisNormalisasi() {
+        foreach ($this->dataAkhir as $key => $ps) {
+            foreach ($this->dataKriteria as $dk) {
+                $topsisNormalisasi = 0;
+
+                $nilai = $ps["kriteria_nilai"][$dk["keterangan"]];
+                $normalisasiKriteria = $this->topsisKriteriaNormalisasi[$dk["keterangan"]];
+
+                $topsisNormalisasi = $nilai / $normalisasiKriteria;
+                $this->dataAkhir[$key]["topsis_normalisasi"][$dk["keterangan"]] = $topsisNormalisasi;
+            }
+        }
+    }
+
+    private function hitungTopsisKriteriaMax() {
+        foreach ($this->dataKriteria as $dk) {
+            $tempMax[$dk["keterangan"]] = [];
+
+            foreach ($this->dataAkhir as $key =>  $da) {
+                array_push($tempMax[$dk["keterangan"]], $da['topsis_normalisasi'][$dk["keterangan"]]);
+            }
+
+            $this->topsisKriteriaMax[$dk["keterangan"]] = max($tempMax[$dk["keterangan"]]);
+        }
+    }
+
+    private function hitungTopsisKriteriaMin() {
+        foreach ($this->dataKriteria as $dk) {
+            $tempMin[$dk["keterangan"]] = [];
+
+            foreach ($this->dataAkhir as $key =>  $da) {
+                array_push($tempMin[$dk["keterangan"]], $da['topsis_normalisasi'][$dk["keterangan"]]);
+            }
+
+            $this->topsisKriteriaMin[$dk["keterangan"]] = min($tempMin[$dk["keterangan"]]);
+        }
+    }
+
+    private function hitungDPlus() {
+        foreach ($this->dataAkhir as $key => $ps) {
+            $dPlus = 0;
+
+            foreach ($this->dataKriteria as $dk) {
+                $topsisNormalisasi      = $ps["topsis_normalisasi"][$dk["keterangan"]];
+                $maxKriteria            = $this->topsisKriteriaMax[$dk["keterangan"]];
+
+                $dPlus += pow(($topsisNormalisasi - $maxKriteria), 2);
+            }
+
+            $this->dataAkhir[$key]["topsis_dplus"] = sqrt($dPlus);
+        }
+    }
+
+    private function hitungDMinus() {
+        foreach ($this->dataAkhir as $key => $ps) {
+            $dPlus = 0;
+
+            foreach ($this->dataKriteria as $dk) {
+                $topsisNormalisasi      = $ps["topsis_normalisasi"][$dk["keterangan"]];
+                $minKriteria            = $this->topsisKriteriaMin[$dk["keterangan"]];
+
+                $dPlus += pow(($topsisNormalisasi - $minKriteria), 2);
+            }
+
+            $this->dataAkhir[$key]["topsis_dminus"] = sqrt($dPlus);
+        }
+    }
+
+
+    private function hitungNilaiV() {
+        foreach ($this->dataAkhir as $key => $ps) {
+            $nilaiV = 0;
+
+            foreach ($this->dataKriteria as $dk) {
+                $topsisNormalisasi      = $ps["topsis_normalisasi"][$dk["keterangan"]];
+                $dPlus      = $ps["topsis_dplus"];
+                $dMinus     = $ps["topsis_dminus"];
+
+
+                $nilaiV += ($dMinus / ($dMinus + $dPlus));
+            }
+
+            $this->dataAkhir[$key]["topsis_nilaiv"] = $nilaiV;
+        }
+    }
+
+    public function sortPeserta() {
+        usort($this->dataAkhir, fn ($a, $b) => $b['topsis_nilaiv'] <=> $a['topsis_nilaiv']);
+    }
+
+    public function setRangking() {
+        $this->sortPeserta();
+        foreach ($this->dataAkhir as $key => $ps) {
+            $this->dataAkhir[$key]['rangking'] = $key + 1;
+            $this->dataAkhir[$key]['periode'] = "";
         }
     }
 }
