@@ -32,4 +32,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <p>Total Siswa yang diseleksi : <?= $totalSiswa . " Siswa." ?></p>
 </div>

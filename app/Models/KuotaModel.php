@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KuotaModel extends Model
-{
+class KuotaModel extends Model {
     protected $DBGroup          = 'default';
     protected $table            = 'kuota';
     protected $primaryKey       = 'id';
